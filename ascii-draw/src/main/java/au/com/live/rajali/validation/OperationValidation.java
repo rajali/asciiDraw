@@ -25,8 +25,8 @@ public class OperationValidation {
 
     public boolean checkCanvasParams(final List<String> params) throws Exception {
         if (params.size() < 2
-                && Integer.parseInt(params.get(0)) > 0
-                && Integer.parseInt(params.get(1)) > 0) {
+                && Integer.parseInt(params.get(0)) < 0
+                && Integer.parseInt(params.get(1)) < 0) {
             throw new Exception(
                     "Canvas requires 2 integer parameters, " + params.size() + " params provided.");
         } else {
@@ -35,11 +35,11 @@ public class OperationValidation {
     }
 
     public boolean checkLineAndRectangleParams(final List<String> params) throws Exception {
-        if (params.size() < 2
-                && Integer.parseInt(params.get(0)) > 0
-                && Integer.parseInt(params.get(1)) > 0
-                && Integer.parseInt(params.get(3)) > 0
-                && Integer.parseInt(params.get(4)) > 0) {
+        if (params.size() < 4
+                && Integer.parseInt(params.get(0)) < 0
+                && Integer.parseInt(params.get(1)) < 0
+                && Integer.parseInt(params.get(3)) < 0
+                && Integer.parseInt(params.get(4)) < 0) {
             throw new Exception(
                     "Line|Rectangle requires 4 integer parameters, " + params.size() + " params provided.");
         } else {
